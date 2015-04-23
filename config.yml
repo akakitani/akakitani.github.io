@@ -25,13 +25,13 @@ assets:
   # Sets JS compressor. No compression by default.
   # Possible variants: 'yui', 'uglifier', nil
   #
-  js_compressor: ~
+  js_compressor: uglifier
 
   #
   # Sets CSS compressor. No compression by default.
   # Possible variants: 'yui', 'sass', nil
   #
-  css_compressor: ~
+  css_compressor: sass
 
   #
   # Sets cachebusting policy for generated assets.

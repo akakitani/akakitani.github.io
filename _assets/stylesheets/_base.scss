@@ -1,0 +1,15 @@
+html, body {
+  background-color: $cream;
+  font-family: $bodyFontFamily;
+  font-size: 1em;
+  height: 100%;
+  width: 100%;
+  margin: 0px auto;
+}
+
+#content {
+  @include outer-container;
+  .container {
+    @include span-columns(12);
+  }
+}
