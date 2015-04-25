@@ -1,14 +1,31 @@
 // Colors
 $black: #222222;
+$grey: #666666;
 $white: #FFFFFF;
 $cream: #FAF8F2;
 
+$background-color: $white;
 $textColor: $black;
 
 // Typography
-$headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$headerFontWeight: bold;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+$headerFontFamily: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$headerFontWeight: $font-weight-bold;
 $headerFontColor: $textColor;
-$bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$bodyFontWeight: normal;
+$bodyFontFamily: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$bodyFontWeight: $font-weight-regular;
 $bodyFontColor: $textColor;
+
+
+// Screen Sizes
+$large-screen: new-breakpoint(max-width 1200px 12);
+$medium-screen: new-breakpoint(max-width 992px 12);
+$small-screen: new-breakpoint(max-width 768px 6);
+$x-small-screen: new-breakpoint(max-width 640px 4);
+$xx-small-screen: new-breakpoint(max-width 320px 4);
+
+// Visual elements
+$border-radius: 6px;

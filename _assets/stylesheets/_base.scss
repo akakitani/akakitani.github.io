@@ -1,5 +1,5 @@
 html, body {
-  background-color: $cream;
+  background-color: $background-color;
   font-family: $bodyFontFamily;
   font-size: 1em;
   height: 100%;
@@ -8,8 +8,8 @@ html, body {
 }
 
 #content {
-  @include outer-container;
+
   .container {
-    @include span-columns(12);
+    height: auto;
   }
 }

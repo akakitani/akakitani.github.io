@@ -1,0 +1,13 @@
+$nav-height: 100px;
+
+.navbar {
+    height: 100px;
+    .logo-block {
+        height: 100%;
+        .logo {
+            display: block;
+            height: 100%;
+            padding: 20px 0px;
+        }
+    }
+}
