@@ -2,7 +2,7 @@
   @include make-md-column(3);
   @include shadow(3);
   background-color: $black;
-  background-image: url("<%= asset_path("pattern.png") %>");
+  //background-image: url("<%= asset_path("pattern.png") %>");
   height: 100%;
 
   @media (max-width: $screen-sm-max) {
@@ -44,12 +44,12 @@
 
     .name {
         font-size: 2em;
+        padding-bottom: 15px;
     }
 
     .tagline {
         font-weight: $font-weight-regular;
         font-size: 1.2em;
-        padding-top: 15px;
     }
 
     .about-text {
@@ -73,6 +73,10 @@
       padding-bottom: 30px;
     }
 
+    a:hover {
+      text-decoration: none;
+    }
+
     .contact {
       @include make-sm-column(4);
       @include make-sm-column-offset(2);
@@ -86,7 +90,6 @@
         font-weight: $font-weight-light;
         &:hover {
           color: $light-purple;
-          text-decoration: none;
         }
       }
     }
@@ -96,15 +99,56 @@
       @include make-md-column(10);
       @include make-md-column-offset(1);
 
+      a {
+        display: inline-block;
+      }
+
       i.link-icon {
         @include transition-all-ease;
         @extend .fa;
-        @extend .fa-2x;
         color: $purple;
+
         &:hover {
           color: $light-purple;
         }
       }
+
+      i.github {
+        @extend .fa-2x;
+        @extend .fa-github-square;
+      }
+
+      i.linkedin {
+        @extend .fa-2x;
+        @extend .fa-linkedin-square;
+      }
+
+      i.behance {
+        @extend .fa-2x;
+        @extend .fa-behance-square;
+      }
+
+      .soundcloud {
+        @extend .fa-stack;
+        margin-top: -13px;
+        margin-left: -2px;
+
+        .fa-square {
+            @include transition-all-ease;
+            color: $purple;
+        }
+
+        .fa-soundcloud {
+            color: $black;
+        }
+
+        &:hover {
+          .fa-square {
+              color: $light-purple;
+          }
+        }
+      }
+
     }
   }
 }

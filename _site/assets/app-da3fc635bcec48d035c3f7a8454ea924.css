@@ -5620,7 +5620,7 @@ button.close {
   line-height: 0.75em;
   vertical-align: -15%; }
 
-.fa-2x, .about-section .about-row .links i.link-icon {
+.fa-2x, .about-section .about-row .links i.github, .about-section .about-row .links i.linkedin, .about-section .about-row .links i.behance {
   font-size: 2em; }
 
 .fa-3x {
@@ -5728,7 +5728,7 @@ button.close {
   -webkit-filter: none;
           filter: none; }
 
-.fa-stack {
+.fa-stack, .about-section .about-row .links .soundcloud {
   position: relative;
   display: inline-block;
   width: 2em;
@@ -6161,7 +6161,7 @@ button.close {
 .fa-sign-out:before {
   content: ""; }
 
-.fa-linkedin-square:before {
+.fa-linkedin-square:before, .about-section .about-row .links i.linkedin:before {
   content: ""; }
 
 .fa-thumb-tack:before {
@@ -6176,7 +6176,7 @@ button.close {
 .fa-trophy:before {
   content: ""; }
 
-.fa-github-square:before {
+.fa-github-square:before, .about-section .about-row .links i.github:before {
   content: ""; }
 
 .fa-upload:before {
@@ -6994,7 +6994,7 @@ button.close {
 .fa-behance:before {
   content: ""; }
 
-.fa-behance-square:before {
+.fa-behance-square:before, .about-section .about-row .links i.behance:before {
   content: ""; }
 
 .fa-steam:before {
@@ -7404,7 +7404,7 @@ p {
   font-weight: 300; }
 
 html, body {
-  background-color: #FFFFFF;
+  background-color: #FCFCFC;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 1em;
   height: 100%;
@@ -7508,7 +7508,7 @@ svg {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-  background-color: #FFFFFF;
+  background-color: #FCFCFC;
   border-radius: 6px;
   height: 300px;
   padding: 15px;
@@ -7589,7 +7589,6 @@ svg {
   padding-right: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
   background-color: #333333;
-  background-image: url("/assets/pattern-b90693b0dd3e8d9e2e158cd6b5e2c76a.png");
   height: 100%; }
   @media (min-width: 992px) {
     .about-section {
@@ -7670,11 +7669,11 @@ svg {
         .about-section .about-row .name, .about-section .about-row .tagline {
           margin-left: 8.3333333333%; } }
     .about-section .about-row .name {
-      font-size: 2em; }
+      font-size: 2em;
+      padding-bottom: 15px; }
     .about-section .about-row .tagline {
       font-weight: 400;
-      font-size: 1.2em;
-      padding-top: 15px; }
+      font-size: 1.2em; }
     .about-section .about-row .about-text {
       position: relative;
       min-height: 1px;
@@ -7708,6 +7707,8 @@ svg {
       text-transform: uppercase; }
     .about-section .about-row .contact, .about-section .about-row .links {
       padding-bottom: 30px; }
+    .about-section .about-row a:hover {
+      text-decoration: none; }
     .about-section .about-row .contact {
       position: relative;
       min-height: 1px;
@@ -7738,8 +7739,7 @@ svg {
         font-size: 0.9em;
         font-weight: 300; }
         .about-section .about-row .contact .email:hover {
-          color: #D09DFF;
-          text-decoration: none; }
+          color: #D09DFF; }
     .about-section .about-row .links {
       position: relative;
       min-height: 1px;
@@ -7760,11 +7760,24 @@ svg {
       @media (min-width: 992px) {
         .about-section .about-row .links {
           margin-left: 8.3333333333%; } }
+      .about-section .about-row .links a {
+        display: inline-block; }
       .about-section .about-row .links i.link-icon {
         -webkit-transition: all 0.25s ease-in-out;
         transition: all 0.25s ease-in-out;
         color: #C17EFF; }
         .about-section .about-row .links i.link-icon:hover {
+          color: #D09DFF; }
+      .about-section .about-row .links .soundcloud {
+        margin-top: -13px;
+        margin-left: -2px; }
+        .about-section .about-row .links .soundcloud .fa-square {
+          -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+          color: #C17EFF; }
+        .about-section .about-row .links .soundcloud .fa-soundcloud {
+          color: #333333; }
+        .about-section .about-row .links .soundcloud:hover .fa-square {
           color: #D09DFF; }
 
 .extender {
