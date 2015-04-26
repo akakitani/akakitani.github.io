@@ -1494,24 +1494,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container {
+.container, .card-section, .about-section {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .container:after {
+  .container:before, .card-section:before, .about-section:before, .container:after, .card-section:after, .about-section:after {
     content: " ";
     display: table; }
-  .container:after {
+  .container:after, .card-section:after, .about-section:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container {
+    .container, .card-section, .about-section {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container {
+    .container, .card-section, .about-section {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container {
+    .container, .card-section, .about-section {
       width: 1170px; } }
 
 .container-fluid {
@@ -3616,15 +3616,19 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header,
+.container > .navbar-header, .card-section > .navbar-header, .about-section > .navbar-header,
 .container > .navbar-collapse,
+.card-section > .navbar-collapse,
+.about-section > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header,
+    .container > .navbar-header, .card-section > .navbar-header, .about-section > .navbar-header,
     .container > .navbar-collapse,
+    .card-section > .navbar-collapse,
+    .about-section > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3668,7 +3672,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, .navbar > .card-section .navbar-brand, .navbar > .about-section .navbar-brand, .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -4178,14 +4182,14 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .container-fluid .jumbotron {
+  .container .jumbotron, .card-section .jumbotron, .about-section .jumbotron, .container-fluid .jumbotron {
     border-radius: 6px; }
-  .jumbotron .container {
+  .jumbotron .container, .jumbotron .card-section, .jumbotron .about-section {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding: 48px 0; }
-      .container .jumbotron, .container-fluid .jumbotron {
+      .container .jumbotron, .card-section .jumbotron, .about-section .jumbotron, .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -7376,6 +7380,25 @@ button.close {
 .fa-medium:before {
   content: ""; }
 
+.background-grey {
+  background-color: #EDEFED; }
+
+.background-purple {
+  background-color: #6E5BAA; }
+
+.background-white {
+  background-color: #FFFFFF; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333;
+  font-family: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+p {
+  color: #333333;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
 html, body {
   background-color: #FFFFFF;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -7384,27 +7407,18 @@ html, body {
   width: 100%;
   margin: 0px auto; }
 
-#content .container {
-  height: auto; }
-
-h1, h2, h3, h4, h5, h6 {
-  color: #222222;
-  font-family: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700; }
-
-p {
-  color: #222222;
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 400; }
-
 .navbar {
-  height: 100px; }
+  background-color: #FFFFFF;
+  border-bottom: none; }
   .navbar .logo-block {
-    height: 100%; }
+    height: 100px; }
     .navbar .logo-block .logo {
       display: block;
       height: 100%;
       padding: 20px 0px; }
+
+.card-section {
+  padding: 90px 0; }
 
 .card-row {
   margin-left: -15px;
@@ -7511,3 +7525,37 @@ p {
   background-size: cover;
   background-position: top;
   background-size: contain; }
+
+.about-section {
+  padding: 90px 0; }
+  .about-section .about-row {
+    margin-left: -15px;
+    margin-right: -15px; }
+    .about-section .about-row:before, .about-section .about-row:after {
+      content: " ";
+      display: table; }
+    .about-section .about-row:after {
+      clear: both; }
+    .about-section .about-row .about-title {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      text-align: center;
+      padding-bottom: 30px; }
+      @media (min-width: 768px) {
+        .about-section .about-row .about-title {
+          float: left;
+          width: 100%; } }
+    .about-section .about-row .about-text {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        .about-section .about-row .about-text {
+          float: left;
+          width: 66.6666666667%; } }
+      @media (min-width: 992px) {
+        .about-section .about-row .about-text {
+          margin-left: 16.6666666667%; } }
