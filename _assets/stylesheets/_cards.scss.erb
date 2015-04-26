@@ -45,7 +45,6 @@
     color: $white;
     display: inline-block;
     float: right;
-    font-family: $headerFontFamily;
     padding: 6px 12px;
     text-align: right;
     visibility: hidden;
@@ -55,12 +54,14 @@
     @extend .h4;
     margin: 0;
     margin-bottom: 6px;
-    font-weight: $font-weight-regular;
+    font-family: $bodyFontFamily;
+    font-weight: $font-weight-light;
   }
 
   .project-title {
     @extend .h3;
     margin: 0;
+    font-family: $headerFontFamily;
     font-weight: $font-weight-bold;
   }
 
@@ -86,7 +87,7 @@
 
 #project-color {
     @include project-thumb("<%= asset_path("thumb_color.png") %>");
-    background-position: center;
+    background-position: top;
 }
 
 #project-foodshift {
@@ -112,5 +113,4 @@
 #project-ui {
     @include project-thumb("<%= asset_path("thumb_ui.png") %>");
     background-position: top;
-    background-size: contain;
 }

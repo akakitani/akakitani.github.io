@@ -1,11 +1,12 @@
 .about-section {
   @include make-md-column(3);
-  @include shadow(1);
+  @include shadow(3);
   background-color: $black;
   background-image: url("<%= asset_path("pattern.png") %>");
   height: 100%;
 
   @media (max-width: $screen-sm-max) {
+    @include shadow(1);
     height: auto;
   }
 
@@ -13,8 +14,13 @@
     @include make-row();
 
     .logo-block {
-        @include make-sm-column(12);
-        padding: 90px 0;
+        @include make-xs-column(10);
+        @include make-xs-column-offset(1);
+        @include make-sm-column(6);
+        @include make-sm-column-offset(3);
+        @include make-md-column(10);
+        @include make-md-column-offset(1);
+        padding-top: 30px;
         text-align: center;
 
         .logo {
@@ -23,8 +29,8 @@
         }
     }
 
-    .about-title, .about-text {
-      //color: $white;
+    .about-title, .about-text, .about-heading {
+      margin: 0;
     }
 
     .name, .tagline {
@@ -41,9 +47,8 @@
     }
 
     .tagline {
-        font-family: $bodyFontFamily;
         font-weight: $font-weight-regular;
-        font-size: 1em;
+        font-size: 1.2em;
         padding-top: 15px;
     }
 
@@ -52,9 +57,61 @@
       @include make-sm-column-offset(2);
       @include make-md-column(10);
       @include make-md-column-offset(1);
-      color: $white;
+      color: $light-grey;
+      font-size: 0.9em;
       padding-top: 60px;
       padding-bottom: 60px;
     }
+
+    .about-heading {
+      color: $white;
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+
+    .contact, .links {
+      padding-bottom: 30px;
+    }
+
+    .contact {
+      @include make-sm-column(4);
+      @include make-sm-column-offset(2);
+      @include make-md-column(10);
+      @include make-md-column-offset(1);
+
+      .email {
+        @include transition-all-ease;
+        color: $purple;
+        font-size: 0.9em;
+        font-weight: $font-weight-light;
+        &:hover {
+          color: $light-purple;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .links {
+      @include make-sm-column(4);
+      @include make-md-column(10);
+      @include make-md-column-offset(1);
+
+      i.link-icon {
+        @include transition-all-ease;
+        @extend .fa;
+        @extend .fa-2x;
+        color: $purple;
+        &:hover {
+          color: $light-purple;
+        }
+      }
+    }
   }
+}
+
+.extender {
+    @media (max-width: $screen-sm-max) {
+      height: 0;
+    }
+    height: 200px;
 }

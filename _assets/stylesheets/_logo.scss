@@ -1,0 +1,11 @@
+svg {
+    @include transition-all-ease;
+    fill: $purple;
+    height: auto;
+    width: 90%;
+
+    &:hover {
+        fill: $light-purple;
+
+    }
+}
