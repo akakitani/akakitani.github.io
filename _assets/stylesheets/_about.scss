@@ -1,23 +1,58 @@
 .about-section {
-  @extend .container;
-  padding: 90px 0;
+  @include make-md-column(3);
+  background-color: $black;
+  height: 100%;
+
+  @media (max-width: $screen-sm-max) {
+    height: auto;
+  }
 
   .about-row {
     @include make-row();
+
+    .logo-block {
+        @include make-sm-column(12);
+        padding: 90px 0;
+        text-align: center;
+
+        .logo {
+            display: inline-block;
+            height: 50px;
+        }
+    }
 
     .about-title, .about-text {
       //color: $white;
     }
 
-    .about-title {
-      @include make-sm-column(12);
-      text-align: center;
-      padding-bottom: 30px;
+    .name, .tagline {
+      @include make-sm-column(8);
+      @include make-sm-column-offset(2);
+      @include make-md-column(10);
+      @include make-md-column-offset(1);
+      color: $white;
+      margin: 0;
+    }
+
+    .name {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-family: $bodyFontFamily;
+        font-weight: $font-weight-regular;
+        font-size: 1em;
+        padding-top: 15px;
     }
 
     .about-text {
-      @include make-md-column(8);
-      @include make-md-column-offset(2);
+      @include make-sm-column(8);
+      @include make-sm-column-offset(2);
+      @include make-md-column(10);
+      @include make-md-column-offset(1);
+      color: $white;
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
   }
 }

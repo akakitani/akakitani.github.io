@@ -1494,35 +1494,35 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .card-section, .about-section {
+.container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .card-section:before, .about-section:before, .container:after, .card-section:after, .about-section:after {
+  .container:before, .container:after {
     content: " ";
     display: table; }
-  .container:after, .card-section:after, .about-section:after {
+  .container:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .card-section, .about-section {
+    .container {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .card-section, .about-section {
+    .container {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .card-section, .about-section {
+    .container {
       width: 1170px; } }
 
-.container-fluid {
+.container-fluid, .full-height-fluid-container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container-fluid:before, .container-fluid:after {
+  .container-fluid:before, .full-height-fluid-container:before, .container-fluid:after, .full-height-fluid-container:after {
     content: " ";
     display: table; }
-  .container-fluid:after {
+  .container-fluid:after, .full-height-fluid-container:after {
     clear: both; }
 
 .row {
@@ -3616,21 +3616,21 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .card-section > .navbar-header, .about-section > .navbar-header,
+.container > .navbar-header,
 .container > .navbar-collapse,
-.card-section > .navbar-collapse,
-.about-section > .navbar-collapse,
 .container-fluid > .navbar-header,
-.container-fluid > .navbar-collapse {
+.full-height-fluid-container > .navbar-header,
+.container-fluid > .navbar-collapse,
+.full-height-fluid-container > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .card-section > .navbar-header, .about-section > .navbar-header,
+    .container > .navbar-header,
     .container > .navbar-collapse,
-    .card-section > .navbar-collapse,
-    .about-section > .navbar-collapse,
     .container-fluid > .navbar-header,
-    .container-fluid > .navbar-collapse {
+    .full-height-fluid-container > .navbar-header,
+    .container-fluid > .navbar-collapse,
+    .full-height-fluid-container > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -3672,7 +3672,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .card-section .navbar-brand, .navbar > .about-section .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand, .navbar > .full-height-fluid-container .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -4182,14 +4182,14 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .card-section .jumbotron, .about-section .jumbotron, .container-fluid .jumbotron {
+  .container .jumbotron, .container-fluid .jumbotron, .full-height-fluid-container .jumbotron {
     border-radius: 6px; }
-  .jumbotron .container, .jumbotron .card-section, .jumbotron .about-section {
+  .jumbotron .container {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding: 48px 0; }
-      .container .jumbotron, .card-section .jumbotron, .about-section .jumbotron, .container-fluid .jumbotron {
+      .container .jumbotron, .container-fluid .jumbotron, .full-height-fluid-container .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -7397,15 +7397,31 @@ h1, h2, h3, h4, h5, h6 {
 p {
   color: #333333;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 400; }
+  font-weight: 300; }
 
 html, body {
   background-color: #FFFFFF;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 1em;
   height: 100%;
-  width: 100%;
-  margin: 0px auto; }
+  margin: 0;
+  padding: 0; }
+
+#content {
+  min-height: 100%; }
+
+.full-height-fluid-container {
+  min-height: 100%; }
+
+.landing-row {
+  margin-left: -15px;
+  margin-right: -15px;
+  height: 100%; }
+  .landing-row:before, .landing-row:after {
+    content: " ";
+    display: table; }
+  .landing-row:after {
+    clear: both; }
 
 .navbar {
   background-color: #FFFFFF;
@@ -7418,7 +7434,15 @@ html, body {
       padding: 20px 0px; }
 
 .card-section {
-  padding: 90px 0; }
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 90px; }
+  @media (min-width: 992px) {
+    .card-section {
+      float: left;
+      width: 75%; } }
 
 .card-row {
   margin-left: -15px;
@@ -7527,7 +7551,19 @@ html, body {
   background-size: contain; }
 
 .about-section {
-  padding: 90px 0; }
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #333333;
+  height: 100%; }
+  @media (min-width: 992px) {
+    .about-section {
+      float: left;
+      width: 25%; } }
+  @media (max-width: 991px) {
+    .about-section {
+      height: auto; } }
   .about-section .about-row {
     margin-left: -15px;
     margin-right: -15px; }
@@ -7536,26 +7572,75 @@ html, body {
       display: table; }
     .about-section .about-row:after {
       clear: both; }
-    .about-section .about-row .about-title {
+    .about-section .about-row .logo-block {
       position: relative;
       min-height: 1px;
       padding-left: 15px;
       padding-right: 15px;
-      text-align: center;
-      padding-bottom: 30px; }
+      padding: 90px 0;
+      text-align: center; }
       @media (min-width: 768px) {
-        .about-section .about-row .about-title {
+        .about-section .about-row .logo-block {
           float: left;
           width: 100%; } }
+      .about-section .about-row .logo-block .logo {
+        display: inline-block;
+        height: 50px; }
+    .about-section .about-row .name, .about-section .about-row .tagline {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #FFFFFF;
+      margin: 0; }
+      @media (min-width: 768px) {
+        .about-section .about-row .name, .about-section .about-row .tagline {
+          float: left;
+          width: 66.6666666667%; } }
+      @media (min-width: 768px) {
+        .about-section .about-row .name, .about-section .about-row .tagline {
+          margin-left: 16.6666666667%; } }
+      @media (min-width: 992px) {
+        .about-section .about-row .name, .about-section .about-row .tagline {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        .about-section .about-row .name, .about-section .about-row .tagline {
+          margin-left: 8.3333333333%; } }
+    .about-section .about-row .name {
+      font-size: 2em; }
+    .about-section .about-row .tagline {
+      font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 1em;
+      padding-top: 15px; }
     .about-section .about-row .about-text {
       position: relative;
       min-height: 1px;
       padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
+      padding-right: 15px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #FFFFFF;
+      padding-top: 60px;
+      padding-bottom: 60px; }
+      @media (min-width: 768px) {
         .about-section .about-row .about-text {
           float: left;
           width: 66.6666666667%; } }
-      @media (min-width: 992px) {
+      @media (min-width: 768px) {
         .about-section .about-row .about-text {
           margin-left: 16.6666666667%; } }
+      @media (min-width: 992px) {
+        .about-section .about-row .about-text {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        .about-section .about-row .about-text {
+          margin-left: 8.3333333333%; } }

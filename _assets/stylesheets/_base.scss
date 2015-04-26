@@ -3,11 +3,25 @@ html, body {
   font-family: $bodyFontFamily;
   font-size: 1em;
   height: 100%;
-  width: 100%;
-  margin: 0px auto;
+  margin: 0;
+  padding: 0;
 }
 
 
 body {
   //padding-top: $nav-height;
+}
+
+#content {
+    min-height: 100%;
+}
+
+.full-height-fluid-container {
+    @extend .container-fluid;
+    min-height: 100%;
+}
+
+.landing-row {
+    @include make-row();
+    height: 100%;
 }
