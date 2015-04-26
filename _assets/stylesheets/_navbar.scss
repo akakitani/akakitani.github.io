@@ -1,9 +1,9 @@
-$nav-height: 100px;
-
 .navbar {
-    height: 100px;
+    background-color: $white;
+    border-bottom: none;
+
     .logo-block {
-        height: 100%;
+        height: $nav-height;
         .logo {
             display: block;
             height: 100%;
@@ -11,3 +11,4 @@ $nav-height: 100px;
         }
     }
 }
+

@@ -1,8 +1,10 @@
 // Colors
-$black: #222222;
-$grey: #666666;
+$black: #333333;
+$grey: #EDEFED;
+$dark-grey: #565A5C;
 $white: #FFFFFF;
 $cream: #FAF8F2;
+$purple: #6E5BAA;
 
 $background-color: $white;
 $textColor: $black;
@@ -29,3 +31,21 @@ $xx-small-screen: new-breakpoint(max-width 320px 4);
 
 // Visual elements
 $border-radius: 6px;
+
+// Navbar
+$nav-height: 100px;
+
+// Grid
+// $container-tablet: 720px + $grid-gutter-width;
+// $container-sm: $container-tablet;
+// $container-desktop: 940px + $grid-gutter-width;
+// $container-md: $container-desktop;
+// $container-large-desktop: 1140px + $grid-gutter-width;
+// $container-lg: $container-large-desktop;
+
+$container-tablet: 720px + $grid-gutter-width;
+$container-sm: $container-tablet;
+$container-desktop: 940px + $grid-gutter-width;
+$container-md: $container-desktop;
+$container-large-desktop: 1140px + $grid-gutter-width;
+$container-lg: $container-large-desktop;

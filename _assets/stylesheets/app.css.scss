@@ -3,9 +3,12 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300);
 
 @import "constants";
-@import "base";
-@import "text";
 @import "animations";
+@import "backgrounds";
+@import "shadows";
+@import "text";
 
+@import "base";
 @import "navbar";
 @import "cards";
+@import "about";
