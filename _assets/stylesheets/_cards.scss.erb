@@ -1,0 +1,141 @@
+/// Computes a top-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+@function top-shadow($depth) {
+  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+  $color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+/// Computes a bottom-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+@function bottom-shadow($depth) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 6, $depth) * 4px;
+  $color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+/// Gives a card depth effect.
+/// @param {Number} $depth - depth level (between 1 and 5)
+/// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+/// @requires {function} top-shadow
+/// @requires {function} bottom-shadow
+@mixin shadow($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+
+.card-row {
+  @include make-row();
+
+  .card-container-small, .card-container-large {
+    margin: 15px 0px;
+  }
+  .card-container-small {
+    @include make-md-column(4);
+  }
+
+  .card-container-large {
+    @include make-md-column(8);
+  }
+}
+
+.card {
+  @include transition-all-ease;
+  @include shadow(1);
+  background-color: $background-color;
+  border-radius: $border-radius;
+  height: 300px;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+
+  .card-header-container {
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+  }
+
+  .project-category, .project-title {
+    @include transition-all-ease;
+    background-color: rgba(0, 0, 0, 0.0);
+    clear: right;
+    color: $white;
+    display: inline-block;
+    float: right;
+    font-family: $headerFontFamily;
+    padding: 0 6px;
+    text-align: right;
+    visibility: hidden;
+  }
+
+  .project-category {
+    font-size: 24px;
+    font-weight: $font-weight-regular;
+  }
+
+  .project-title {
+    font-size: 30px;
+    font-weight: $font-weight-bold;
+  }
+
+  &:hover {
+    @include shadow(2);
+    cursor: pointer;
+
+    .project-category, .project-title {
+      background-color: rgba(0, 0, 0, 0.5);
+      visibility: visible;
+      width: auto;
+    }
+  }
+}
+
+// Individual Project Thumbnails
+
+@mixin project-thumb($imgpath) {
+  background-image: url($imgpath);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#project-color {
+    @include project-thumb("<%= asset_path("thumb_color.png") %>");
+    background-position: center;
+}
+
+#project-foodshift {
+    @include project-thumb("<%= asset_path("thumb_foodshift.png") %>");
+    background-position: top;
+}
+
+#project-layout {
+    @include project-thumb("<%= asset_path("thumb_layout.png") %>");
+    background-position: center;
+}
+
+#project-odalc {
+    @include project-thumb("<%= asset_path("thumb_odalc.png") %>");
+    background-position: top;
+}
+
+#project-typography {
+    @include project-thumb("<%= asset_path("thumb_typography.png") %>");
+    background-position: top;
+}
+
+#project-ui {
+    @include project-thumb("<%= asset_path("thumb_ui.png") %>");
+    background-position: top;
+    background-size: contain;
+}
