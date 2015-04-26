@@ -1,6 +1,8 @@
 .about-section {
   @include make-md-column(3);
+  @include shadow(1);
   background-color: $black;
+  background-image: url("<%= asset_path("pattern.png") %>");
   height: 100%;
 
   @media (max-width: $screen-sm-max) {

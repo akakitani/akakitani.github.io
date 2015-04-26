@@ -1145,7 +1145,7 @@ hr {
   cursor: pointer; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .card .project-title, .h4, .card .project-category, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
@@ -1159,9 +1159,11 @@ h1, h2, h3, h4, h5, h6,
   h6 .small,
   .h1 small,
   .h1 .small, .h2 small,
-  .h2 .small, .h3 small,
-  .h3 .small, .h4 small,
-  .h4 .small, .h5 small,
+  .h2 .small, .h3 small, .card .project-title small,
+  .h3 .small,
+  .card .project-title .small, .h4 small, .card .project-category small,
+  .h4 .small,
+  .card .project-category .small, .h5 small,
   .h5 .small, .h6 small,
   .h6 .small {
     font-weight: normal;
@@ -1170,7 +1172,7 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1,
 h2, .h2,
-h3, .h3 {
+h3, .h3, .card .project-title {
   margin-top: 20px;
   margin-bottom: 10px; }
   h1 small,
@@ -1180,18 +1182,20 @@ h3, .h3 {
   h2 .small, .h2 small,
   .h2 .small,
   h3 small,
-  h3 .small, .h3 small,
-  .h3 .small {
+  h3 .small, .h3 small, .card .project-title small,
+  .h3 .small,
+  .card .project-title .small {
     font-size: 65%; }
 
-h4, .h4,
+h4, .h4, .card .project-category,
 h5, .h5,
 h6, .h6 {
   margin-top: 10px;
   margin-bottom: 10px; }
   h4 small,
-  h4 .small, .h4 small,
+  h4 .small, .h4 small, .card .project-category small,
   .h4 .small,
+  .card .project-category .small,
   h5 small,
   h5 .small, .h5 small,
   .h5 .small,
@@ -1206,10 +1210,10 @@ h1, .h1 {
 h2, .h2 {
   font-size: 30px; }
 
-h3, .h3 {
+h3, .h3, .card .project-title {
   font-size: 24px; }
 
-h4, .h4 {
+h4, .h4, .card .project-category {
   font-size: 18px; }
 
 h5, .h5 {
@@ -7438,11 +7442,26 @@ html, body {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
   padding-top: 90px; }
+  @media (min-width: 768px) {
+    .card-section {
+      float: left;
+      width: 83.3333333333%; } }
+  @media (min-width: 768px) {
+    .card-section {
+      margin-left: 8.3333333333%; } }
   @media (min-width: 992px) {
     .card-section {
       float: left;
-      width: 75%; } }
+      width: 58.3333333333%; } }
+  @media (min-width: 992px) {
+    .card-section {
+      margin-left: 8.3333333333%; } }
 
 .card-row {
   margin-left: -15px;
@@ -7496,14 +7515,15 @@ html, body {
     display: inline-block;
     float: right;
     font-family: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    padding: 0 6px;
+    padding: 6px 12px;
     text-align: right;
     visibility: hidden; }
   .card .project-category {
-    font-size: 24px;
+    margin: 0;
+    margin-bottom: 6px;
     font-weight: 400; }
   .card .project-title {
-    font-size: 30px;
+    margin: 0;
     font-weight: 700; }
   .card:hover {
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
@@ -7555,7 +7575,9 @@ html, body {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
   background-color: #333333;
+  background-image: url("/assets/pattern-b90693b0dd3e8d9e2e158cd6b5e2c76a.png");
   height: 100%; }
   @media (min-width: 992px) {
     .about-section {
