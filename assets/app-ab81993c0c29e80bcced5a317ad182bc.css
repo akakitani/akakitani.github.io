@@ -7721,7 +7721,7 @@ svg {
       @media (min-width: 768px) {
         .about-section .about-row .contact {
           float: left;
-          width: 33.3333333333%; } }
+          width: 25%; } }
       @media (min-width: 768px) {
         .about-section .about-row .contact {
           margin-left: 16.6666666667%; } }
@@ -7752,7 +7752,7 @@ svg {
       @media (min-width: 768px) {
         .about-section .about-row .links {
           float: left;
-          width: 33.3333333333%; } }
+          width: 25%; } }
       @media (min-width: 992px) {
         .about-section .about-row .links {
           float: left;
@@ -7781,9 +7781,53 @@ svg {
           color: #333333; }
         .about-section .about-row .links .soundcloud:hover .fa-square {
           color: #D09DFF; }
+    .about-section .about-row .music {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 768px) {
+        .about-section .about-row .music {
+          float: left;
+          width: 25%; } }
+      @media (min-width: 992px) {
+        .about-section .about-row .music {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        .about-section .about-row .music {
+          margin-left: 8.3333333333%; } }
+      .about-section .about-row .music .track {
+        display: table;
+        color: #FFFFFF;
+        font-size: 0.7em;
+        font-weight: 300;
+        max-height: 45px;
+        padding-top: 7px; }
+        .about-section .about-row .music .track .cover-wrap {
+          display: table-cell;
+          vertical-align: middle;
+          padding-right: 5px; }
+          .about-section .about-row .music .track .cover-wrap #cover {
+            display: inline-block;
+            max-height: 45px; }
+            @media (max-width: 767px) {
+              .about-section .about-row .music .track .cover-wrap #cover {
+                height: 45px; } }
+        .about-section .about-row .music .track .track-info {
+          display: table-cell;
+          vertical-align: middle; }
+          .about-section .about-row .music .track .track-info #title, .about-section .about-row .music .track .track-info #artist {
+            color: #FFFFFF; }
+          .about-section .about-row .music .track .track-info #title {
+            font-style: italic; }
 
 .extender {
   height: 200px; }
   @media (max-width: 991px) {
     .extender {
-      height: 0; } }
+      height: 30px; } }
