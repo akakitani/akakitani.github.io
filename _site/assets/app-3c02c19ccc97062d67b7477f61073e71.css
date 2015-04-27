@@ -7762,6 +7762,8 @@ svg {
           margin-left: 8.3333333333%; } }
       .about-section .about-row .links a {
         display: inline-block; }
+      .about-section .about-row .links .icon-list {
+        padding-top: 5px; }
       .about-section .about-row .links i.link-icon {
         -webkit-transition: all 0.25s ease-in-out;
         transition: all 0.25s ease-in-out;
