@@ -14,19 +14,19 @@
     @include make-row();
 
     .logo-block {
-        @include make-xs-column(10);
-        @include make-xs-column-offset(1);
-        @include make-sm-column(6);
-        @include make-sm-column-offset(3);
-        @include make-md-column(10);
-        @include make-md-column-offset(1);
-        padding-top: 30px;
-        text-align: center;
+      @include make-xs-column(10);
+      @include make-xs-column-offset(1);
+      @include make-sm-column(6);
+      @include make-sm-column-offset(3);
+      @include make-md-column(10);
+      @include make-md-column-offset(1);
+      padding-top: 30px;
+      text-align: center;
 
-        .logo {
-            display: inline-block;
-            height: 50px;
-        }
+      .logo {
+        display: inline-block;
+        height: 50px;
+      }
     }
 
     .about-title, .about-text, .about-heading {
@@ -43,13 +43,13 @@
     }
 
     .name {
-        font-size: 2em;
-        padding-bottom: 15px;
+      font-size: 2em;
+      padding-bottom: 15px;
     }
 
     .tagline {
-        font-weight: $font-weight-regular;
-        font-size: 1.2em;
+      font-weight: $font-weight-regular;
+      font-size: 1.2em;
     }
 
     .about-text {
@@ -78,7 +78,7 @@
     }
 
     .contact {
-      @include make-sm-column(4);
+      @include make-sm-column(3);
       @include make-sm-column-offset(2);
       @include make-md-column(10);
       @include make-md-column-offset(1);
@@ -95,7 +95,7 @@
     }
 
     .links {
-      @include make-sm-column(4);
+      @include make-sm-column(3);
       @include make-md-column(10);
       @include make-md-column-offset(1);
 
@@ -138,28 +138,71 @@
         margin-left: -2px;
 
         .fa-square {
-            @include transition-all-ease;
-            color: $purple;
+          @include transition-all-ease;
+          color: $purple;
         }
 
         .fa-soundcloud {
-            color: $black;
+          color: $black;
         }
 
         &:hover {
           .fa-square {
-              color: $light-purple;
+            color: $light-purple;
           }
         }
       }
+    }
 
+    .music {
+      @include make-sm-column(3);
+      @include make-md-column(10);
+      @include make-md-column-offset(1);
+
+      .track {
+        display: table;
+
+        color: $white;
+        font-size: 0.7em;
+        font-weight: $font-weight-light;
+        max-height: 45px;
+        padding-top: 7px;
+
+        .cover-wrap {
+          display: table-cell;
+          vertical-align: middle;
+          padding-right: 5px;
+
+          #cover {
+            display: inline-block;
+            max-height: 45px;
+
+
+            @media (max-width: $screen-xs-max) {
+              height: 45px;
+            }
+          }
+        }
+
+        .track-info {
+          display: table-cell;
+          vertical-align: middle;
+
+          #title, #artist {
+            color: $white;
+          }
+          #title {
+            font-style: italic;
+          }
+        }
+      }
     }
   }
 }
 
 .extender {
-    @media (max-width: $screen-sm-max) {
-      height: 0;
-    }
-    height: 200px;
+  @media (max-width: $screen-sm-max) {
+    height: 30px;
+  }
+  height: 200px;
 }
