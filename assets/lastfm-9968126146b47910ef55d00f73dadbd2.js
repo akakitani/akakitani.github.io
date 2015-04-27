@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var last_fm_url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Verbana&api_key=c4b434ce11c4e59f20433e95f4252ea0&format=json';
+    var last_fm_url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Verbana&api_key=c4b434ce11c4e59f20433e95f4252ea0&format=json';
 
     var jqxhr = $.getJSON(last_fm_url, function(data) {
       var last_track = data.recenttracks.track.shift();
