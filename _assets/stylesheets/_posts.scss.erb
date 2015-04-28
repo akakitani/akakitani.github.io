@@ -1,0 +1,41 @@
+.post-section {
+  @include make-xs-column(10);
+  @include make-xs-column-offset(1);
+  @include make-md-column(7);
+  @include make-md-column-offset(1);
+  height: 100%;
+}
+
+.post-row {
+  @include make-row();
+}
+
+.post-title {
+  @include make-xs-column(12);
+  text-align: center;
+  margin: 0;
+  padding-bottom: 60px;
+}
+
+.post-text {
+  @include make-xs-column(10);
+  @include make-xs-column-offset(1);
+  padding: 30px 0px;
+}
+
+.post-image {
+  max-width: 100%;
+  padding: 30px 0px;
+
+  &.sm {
+      @include make-xs-column(4);
+  }
+
+  &.md {
+      @include make-xs-column(8);
+  }
+
+  &.lg {
+      @include make-xs-column(12);
+  }
+}

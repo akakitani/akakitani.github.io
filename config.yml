@@ -84,7 +84,3 @@ assets:
   # Default: 1
   #
   version: 1
-
-# Facebook API
-fb-id: 100000327343270
-
