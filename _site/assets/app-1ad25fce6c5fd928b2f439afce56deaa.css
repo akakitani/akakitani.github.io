@@ -7420,14 +7420,14 @@ p {
 .full-height-fluid-container {
   min-height: 100%; }
 
-.landing-row {
+.page-row {
   margin-left: -15px;
   margin-right: -15px;
   height: 100%; }
-  .landing-row:before, .landing-row:after {
+  .page-row:before, .page-row:after {
     content: " ";
     display: table; }
-  .landing-row:after {
+  .page-row:after {
     clear: both; }
 
 svg {
