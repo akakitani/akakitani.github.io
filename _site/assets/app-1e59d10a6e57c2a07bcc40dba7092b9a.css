@@ -1145,7 +1145,7 @@ hr {
   cursor: pointer; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .card .project-title, .h4, .card .project-category, .h5, .h6 {
+.h1, .h2, .post-section-title, .h3, .card .project-title, .h4, .card .project-category, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
@@ -1158,8 +1158,9 @@ h1, h2, h3, h4, h5, h6,
   h5 .small, h6 small,
   h6 .small,
   .h1 small,
-  .h1 .small, .h2 small,
-  .h2 .small, .h3 small, .card .project-title small,
+  .h1 .small, .h2 small, .post-section-title small,
+  .h2 .small,
+  .post-section-title .small, .h3 small, .card .project-title small,
   .h3 .small,
   .card .project-title .small, .h4 small, .card .project-category small,
   .h4 .small,
@@ -1171,7 +1172,7 @@ h1, h2, h3, h4, h5, h6,
     color: #777777; }
 
 h1, .h1,
-h2, .h2,
+h2, .h2, .post-section-title,
 h3, .h3, .card .project-title {
   margin-top: 20px;
   margin-bottom: 10px; }
@@ -1179,8 +1180,9 @@ h3, .h3, .card .project-title {
   h1 .small, .h1 small,
   .h1 .small,
   h2 small,
-  h2 .small, .h2 small,
+  h2 .small, .h2 small, .post-section-title small,
   .h2 .small,
+  .post-section-title .small,
   h3 small,
   h3 .small, .h3 small, .card .project-title small,
   .h3 .small,
@@ -1207,7 +1209,7 @@ h6, .h6 {
 h1, .h1 {
   font-size: 36px; }
 
-h2, .h2 {
+h2, .h2, .post-section-title {
   font-size: 30px; }
 
 h3, .h3, .card .project-title {
@@ -7414,6 +7416,9 @@ html, body {
 p {
   margin: 0; }
 
+a:hover {
+  text-decoration: none; }
+
 #content {
   min-height: 100%; }
 
@@ -7694,7 +7699,7 @@ svg {
             font-style: italic; }
 
 .extender {
-  height: 500px; }
+  height: 350px; }
   @media (max-width: 991px) {
     .extender {
       height: 30px; } }
@@ -7771,14 +7776,13 @@ svg {
   .card .project-category, .card .project-title {
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     clear: right;
     color: #FFFFFF;
     display: inline-block;
     float: right;
     padding: 6px 12px;
-    text-align: right;
-    visibility: hidden; }
+    text-align: right; }
   .card .project-category {
     margin: 0;
     margin-bottom: 6px;
@@ -7789,10 +7793,9 @@ svg {
     font-family: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-weight: 700; }
   .card:hover {
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
     cursor: pointer; }
     .card:hover .project-category, .card:hover .project-title {
-      background-color: rgba(0, 0, 0, 0.5);
       visibility: visible;
       width: auto; }
 
@@ -7876,7 +7879,7 @@ svg {
   margin: 0;
   padding-bottom: 60px; }
 
-.post-text {
+.post-text, .post-section-title {
   position: relative;
   float: left;
   width: 83.3333333333%;
@@ -7886,9 +7889,15 @@ svg {
   margin-left: 8.3333333333%;
   padding: 30px 0px; }
 
+.post-section-title {
+  font-family: "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0; }
+
 .post-image {
-  max-width: 100%;
-  padding: 30px 0px; }
+  max-width: 100%; }
   .post-image.sm {
     position: relative;
     float: left;

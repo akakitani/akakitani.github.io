@@ -23,9 +23,19 @@
   padding: 30px 0px;
 }
 
+.post-section-title {
+  @extend .h2;
+  @extend .post-text;
+  font-family: $headerFontFamily;
+  font-weight: $font-weight-bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+
 .post-image {
   max-width: 100%;
-  padding: 30px 0px;
 
   &.sm {
       @include make-xs-column(4);

@@ -41,14 +41,14 @@
 
   .project-category, .project-title {
     @include transition-all-ease;
-    background-color: rgba(0, 0, 0, 0.0);
+    background-color: rgba(0, 0, 0, 0.5);
     clear: right;
     color: $white;
     display: inline-block;
     float: right;
     padding: 6px 12px;
     text-align: right;
-    visibility: hidden;
+    //visibility: hidden;
   }
 
   .project-category {
@@ -67,11 +67,10 @@
   }
 
   &:hover {
-    @include shadow(2);
+    @include shadow(3);
     cursor: pointer;
 
     .project-category, .project-title {
-      background-color: rgba(0, 0, 0, 0.5);
       visibility: visible;
       width: auto;
     }
