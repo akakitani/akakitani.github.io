@@ -7803,34 +7803,37 @@ svg {
   background-position: top; }
 
 #project-foodshift {
-  background-image: url("/assets/thumb_foodshift-99ae4263e855e10ea649805f0aa700c3.png");
+  background-image: url("/assets/thumb_foodshift-1b2ab0b0e4ebb4ddce94bf1d6e77d2e7.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top; }
+  background-position: center;
+  background-size: contain; }
 
 #project-layout {
   background-image: url("/assets/thumb_layout-d81fc2d8163a0b082b4a0987347afbea.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: left; }
 
 #project-odalc {
-  background-image: url("/assets/thumb_odalc-5efe6fd1bbbd374f0daceff82af1aebe.png");
+  background-image: url("/assets/thumb_odalc-429ae9b399aa1813e9c15a8469f33faf.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top; }
+  background-position: center;
+  background-size: contain; }
 
 #project-typography {
   background-image: url("/assets/thumb_typography-bf7ac98338d4810207701d7b96d0c948.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top; }
+  background-position: center; }
 
-#project-ui {
-  background-image: url("/assets/thumb_ui-44ec2043bc3abeb22a59cac80330d4f1.png");
+#project-art-thieves {
+  background-image: url("/assets/thumb_art_thieves-e12541ac9b86bcc5d3c46b04102f6a25.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top; }
+  background-position: center;
+  background-size: contain; }
 
 .post-section {
   position: relative;
